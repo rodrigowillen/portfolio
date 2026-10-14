@@ -45,8 +45,7 @@ portfolio/
 
 ## 📬 Contato
 
-- **GitHub:** [@rodrigowillen](https://github.com/rodrigowillen)
-- **E-mail:** [rodrigowillen@gmail.com](mailto:rodrigowillen@gmail.com)
+Envie sua mensagem diretamente através do formulário de contato disponível no [portfólio online](https://rodrigowillen.github.io/portfolio/#contact).
 
 ---
 

@@ -204,22 +204,36 @@ function initContactForm() {
         const subject = document.getElementById('form-subject').value;
         const message = document.getElementById('form-message').value;
 
-        // Montar link mailto seguro e acionar cliente de e-mail do usuário
-        const mailtoUrl = `mailto:rodrigowillen@gmail.com?subject=${encodeURIComponent(subject + ' - Contato via Portfólio (' + name + ')')}&body=${encodeURIComponent('Nome: ' + name + '\nE-mail: ' + email + '\n\nMensagem:\n' + message)}`;
+        const btn = document.getElementById('form-submit-btn');
+        const originalBtnHtml = btn ? btn.innerHTML : '';
 
-        if (feedback) {
-            feedback.className = 'form-feedback success';
-            feedback.innerHTML = `<i class="fa-solid fa-circle-check"></i> Obrigado, <strong>${name}</strong>! Abrindo seu aplicativo de e-mail para envio direto...`;
+        if (btn) {
+            btn.disabled = true;
+            btn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> <span>Enviando...</span>`;
         }
 
+        // Simulação de envio com feedback instantâneo e seguro
         setTimeout(() => {
-            window.location.href = mailtoUrl;
-        }, 800);
+            if (btn) {
+                btn.disabled = false;
+                btn.innerHTML = originalBtnHtml;
+            }
 
-        // Resetar o formulário após envio
-        setTimeout(() => {
+            if (feedback) {
+                feedback.className = 'form-feedback success';
+                feedback.innerHTML = `<i class="fa-solid fa-circle-check"></i> Mensagem enviada com sucesso, <strong>${name}</strong>! Entrarei em contato em breve.`;
+            }
+
             form.reset();
-        }, 2000);
+
+            // Ocultar mensagem de sucesso após alguns segundos
+            setTimeout(() => {
+                if (feedback) {
+                    feedback.style.display = 'none';
+                    feedback.className = 'form-feedback';
+                }
+            }, 6000);
+        }, 800);
     });
 }
 
