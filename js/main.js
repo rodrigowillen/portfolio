@@ -1,275 +1,184 @@
 /**
- * PORTFÓLIO RODRIGO WILLEN - JAVASCRIPT PRINCIPAL
- * Interatividades: Dark/Light Mode, Typewriter, Filtro de Projetos, Menu Mobile, Form
+ * RODRIGO WILLEN — PURE BLACK PORTFOLIO CORE
+ * Arquitetado com o Antigravity Kit (Clean Code & Interatividade de Alta Fidelidade)
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-    initTheme();
-    initMobileMenu();
-    initNavbarScroll();
-    initTypewriter();
-    initProjectsFilter();
-    initContactForm();
+    initClock();
+    initInteractiveTerminal();
+    initMobileDrawer();
+    initSecureContactForm();
     initCurrentYear();
-    initScrollSpy();
 });
 
 /* ==========================================================================
-   TEMA CLARO / ESCURO (DARK / LIGHT MODE)
+   RELÓGIO DO SISTEMA EM TEMPO REAL (UTC / LOCAL)
    ========================================================================== */
-function initTheme() {
-    const themeToggles = [
-        document.getElementById('theme-toggle'),
-        document.getElementById('theme-toggle-mobile')
-    ];
+function initClock() {
+    const timeElement = document.getElementById('system-time');
+    if (!timeElement) return;
 
-    // Checar preferência salva ou do sistema operacional
-    const savedTheme = localStorage.getItem('rw-theme');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    
-    if (savedTheme) {
-        document.documentElement.setAttribute('data-theme', savedTheme);
-    } else if (!prefersDark) {
-        document.documentElement.setAttribute('data-theme', 'light');
+    function updateTime() {
+        const now = new Date();
+        const hours = String(now.getHours()).padStart(2, '0');
+        const minutes = String(now.getMinutes()).padStart(2, '0');
+        const seconds = String(now.getSeconds()).padStart(2, '0');
+        timeElement.textContent = `SYS.CLOCK ${hours}:${minutes}:${seconds} (LOCAL)`;
     }
 
-    function toggleTheme() {
-        const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
-        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-        
-        document.documentElement.setAttribute('data-theme', newTheme);
-        localStorage.setItem('rw-theme', newTheme);
-    }
-
-    themeToggles.forEach(btn => {
-        if (btn) {
-            btn.addEventListener('click', toggleTheme);
-        }
-    });
+    updateTime();
+    setInterval(updateTime, 1000);
 }
 
 /* ==========================================================================
-   MENU MOBILE
+   TERMINAL INTERATIVO DA HERO SECTION
    ========================================================================== */
-function initMobileMenu() {
-    const navMenu = document.getElementById('nav-menu');
-    const navToggle = document.getElementById('nav-toggle');
-    const navClose = document.getElementById('nav-close');
-    const navLinks = document.querySelectorAll('.nav-link');
+function initInteractiveTerminal() {
+    const termBody = document.getElementById('terminal-body');
+    const cmdButtons = document.querySelectorAll('.term-btn');
+    if (!termBody) return;
 
-    if (navToggle && navMenu) {
-        navToggle.addEventListener('click', () => {
-            navMenu.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        });
+    const commandDatabase = {
+        whoami: "Rodrigo Willen — Desenvolvedor de Software focado em código limpo, arquitetura e alto desempenho.",
+        stack: "JavaScript (ES6+), TypeScript, React, Node.js, Python, REST APIs, Git & Cloud Deploy.",
+        projects: "Projetos: [1] Chatbot Inteligente (Vercel), [2] Pure Black Portfolio (AG Kit), [3] Telemetry & Systems Spec.",
+        status: "● SISTEMA OPERACIONAL: 100% pronto e aberto para novos projetos e colaborações.",
+        clear: "__CLEAR__"
+    };
+
+    function executeCommand(cmdName) {
+        if (cmdName === 'clear') {
+            termBody.innerHTML = `
+                <div class="term-line output-line text-muted">Sessão limpa pelo usuário. Digite ou clique em um comando abaixo.</div>
+                <div class="term-line input-line">
+                    <span class="term-prompt">rodrigo@sys:~$</span>
+                    <span class="term-cmd">help</span>
+                    <span class="term-cursor">_</span>
+                </div>
+                <div class="term-line response-line">
+                    Comandos disponíveis: <span class="res-highlight">whoami</span>, <span class="res-highlight">stack</span>, <span class="res-highlight">projects</span>, <span class="res-highlight">clear</span>
+                </div>
+            `;
+            return;
+        }
+
+        const responseText = commandDatabase[cmdName] || `Comando não reconhecido: ${cmdName}. Use: whoami, stack, projects, clear.`;
+
+        // Criar linha de comando
+        const inputDiv = document.createElement('div');
+        inputDiv.className = 'term-line input-line';
+        inputDiv.innerHTML = `<span class="term-prompt">rodrigo@sys:~$</span> <span class="term-cmd">${cmdName}</span>`;
+
+        // Criar linha de resposta
+        const responseDiv = document.createElement('div');
+        responseDiv.className = 'term-line response-line';
+        responseDiv.innerHTML = `<span class="res-highlight">${responseText}</span>`;
+
+        termBody.appendChild(inputDiv);
+        termBody.appendChild(responseDiv);
+
+        // Auto-scroll para a última linha
+        termBody.scrollTop = termBody.scrollHeight;
     }
 
-    if (navClose && navMenu) {
-        navClose.addEventListener('click', () => {
-            navMenu.classList.remove('active');
-            document.body.style.overflow = '';
-        });
-    }
-
-    // Fechar ao clicar em qualquer link
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            if (navMenu.classList.contains('active')) {
-                navMenu.classList.remove('active');
-                document.body.style.overflow = '';
-            }
-        });
-    });
-
-    // Fechar ao clicar fora do menu
-    document.addEventListener('click', (e) => {
-        if (navMenu && navMenu.classList.contains('active')) {
-            if (!navMenu.contains(e.target) && !navToggle.contains(e.target)) {
-                navMenu.classList.remove('active');
-                document.body.style.overflow = '';
-            }
-        }
-    });
-}
-
-/* ==========================================================================
-   HEADER SCROLL EFFECT
-   ========================================================================== */
-function initNavbarScroll() {
-    const header = document.getElementById('header');
-    
-    window.addEventListener('scroll', () => {
-        if (window.scrollY >= 50) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
-        }
-    });
-}
-
-/* ==========================================================================
-   EFEITO DE DIGITAÇÃO (TYPEWRITER)
-   ========================================================================== */
-function initTypewriter() {
-    const textElement = document.getElementById('hero-typing');
-    if (!textElement) return;
-
-    const phrases = [
-        'Desenvolvedor de Software',
-        'Front-end & Web Moderno',
-        'Criador de Chatbots & IA',
-        'JavaScript & Soluções Web'
-    ];
-
-    let phraseIndex = 0;
-    let charIndex = 0;
-    let isDeleting = false;
-    const typingSpeed = 100;
-    const deletingSpeed = 50;
-    const pauseDelay = 2000;
-
-    function type() {
-        const currentPhrase = phrases[phraseIndex];
-
-        if (isDeleting) {
-            textElement.textContent = currentPhrase.substring(0, charIndex - 1);
-            charIndex--;
-        } else {
-            textElement.textContent = currentPhrase.substring(0, charIndex + 1);
-            charIndex++;
-        }
-
-        let currentSpeed = isDeleting ? deletingSpeed : typingSpeed;
-
-        if (!isDeleting && charIndex === currentPhrase.length) {
-            currentSpeed = pauseDelay;
-            isDeleting = true;
-        } else if (isDeleting && charIndex === 0) {
-            isDeleting = false;
-            phraseIndex = (phraseIndex + 1) % phrases.length;
-            currentSpeed = 400;
-        }
-
-        setTimeout(type, currentSpeed);
-    }
-
-    type();
-}
-
-/* ==========================================================================
-   FILTRO DE PROJETOS
-   ========================================================================== */
-function initProjectsFilter() {
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    const projectCards = document.querySelectorAll('.project-card');
-
-    if (!filterButtons.length) return;
-
-    filterButtons.forEach(btn => {
+    cmdButtons.forEach(btn => {
         btn.addEventListener('click', () => {
-            // Remover classe ativa dos outros botões
-            filterButtons.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-
-            const filterValue = btn.getAttribute('data-filter');
-
-            projectCards.forEach(card => {
-                const categories = card.getAttribute('data-category') || '';
-                
-                if (filterValue === 'all' || categories.includes(filterValue)) {
-                    card.style.display = 'flex';
-                    card.style.animation = 'fadeIn 0.4s ease forwards';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
+            const cmd = btn.getAttribute('data-command');
+            if (cmd) {
+                executeCommand(cmd);
+            }
         });
     });
 }
 
 /* ==========================================================================
-   FORMULÁRIO DE CONTATO
+   MOBILE DRAWER NAVIGATION
    ========================================================================== */
-function initContactForm() {
+function initMobileDrawer() {
+    const toggle = document.getElementById('mobile-toggle');
+    const drawer = document.getElementById('mobile-drawer');
+    const closeBtn = document.getElementById('drawer-close');
+    const drawerLinks = document.querySelectorAll('.drawer-item');
+
+    if (!drawer) return;
+
+    function openDrawer() {
+        drawer.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeDrawer() {
+        drawer.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    if (toggle) toggle.addEventListener('click', openDrawer);
+    if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
+
+    drawerLinks.forEach(link => {
+        link.addEventListener('click', closeDrawer);
+    });
+}
+
+/* ==========================================================================
+   FORMULÁRIO DE CONTATO PRIVADO & SEGURO
+   ========================================================================== */
+function initSecureContactForm() {
     const form = document.getElementById('contact-form');
     const feedback = document.getElementById('form-feedback');
+    const submitBtn = document.getElementById('form-submit-btn');
 
     if (!form) return;
 
     form.addEventListener('submit', (e) => {
         e.preventDefault();
 
-        const name = document.getElementById('form-name').value;
-        const email = document.getElementById('form-email').value;
-        const subject = document.getElementById('form-subject').value;
-        const message = document.getElementById('form-message').value;
+        const nameInput = document.getElementById('form-name');
+        const emailInput = document.getElementById('form-email');
+        const subjectInput = document.getElementById('form-subject');
+        const messageInput = document.getElementById('form-message');
 
-        const btn = document.getElementById('form-submit-btn');
-        const originalBtnHtml = btn ? btn.innerHTML : '';
+        const name = nameInput ? nameInput.value.trim() : 'Visitante';
 
-        if (btn) {
-            btn.disabled = true;
-            btn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> <span>Enviando...</span>`;
+        if (submitBtn) {
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> <span>Transmitindo...</span>`;
         }
 
-        // Simulação de envio com feedback instantâneo e seguro
+        // Simulação segura de despacho assíncrono com feedback
         setTimeout(() => {
-            if (btn) {
-                btn.disabled = false;
-                btn.innerHTML = originalBtnHtml;
+            if (submitBtn) {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = `<span class="btn-text">Transmitir Mensagem</span> <i class="fa-solid fa-terminal"></i>`;
             }
 
             if (feedback) {
-                feedback.className = 'form-feedback success';
-                feedback.innerHTML = `<i class="fa-solid fa-circle-check"></i> Mensagem enviada com sucesso, <strong>${name}</strong>! Entrarei em contato em breve.`;
+                feedback.className = 'form-status-alert success';
+                feedback.innerHTML = `
+                    <i class="fa-solid fa-circle-check"></i>
+                    <strong>TRANSMISSÃO CONCLUÍDA:</strong> Mensagem recebida com sucesso, <strong>${name}</strong>. Responderei o mais breve possível.
+                `;
             }
 
             form.reset();
 
-            // Ocultar mensagem de sucesso após alguns segundos
+            // Esconder aviso após 8 segundos
             setTimeout(() => {
                 if (feedback) {
+                    feedback.className = 'form-status-alert';
                     feedback.style.display = 'none';
-                    feedback.className = 'form-feedback';
                 }
-            }, 6000);
-        }, 800);
+            }, 8000);
+        }, 900);
     });
 }
 
 /* ==========================================================================
-   SCROLL SPY (INDICADOR DE NAVEGAÇÃO ATIVA)
-   ========================================================================== */
-function initScrollSpy() {
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.nav-link');
-
-    window.addEventListener('scroll', () => {
-        const scrollY = window.pageYOffset;
-
-        sections.forEach(current => {
-            const sectionHeight = current.offsetHeight;
-            const sectionTop = current.offsetTop - 120;
-            const sectionId = current.getAttribute('id');
-
-            if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-                navLinks.forEach(link => {
-                    link.classList.remove('active-link');
-                    if (link.getAttribute('href') === `#${sectionId}`) {
-                        link.classList.add('active-link');
-                    }
-                });
-            }
-        });
-    });
-}
-
-/* ==========================================================================
-   ANO ATUAL NO RODAPÉ
+   ANO ATUAL NO COPYRIGHT
    ========================================================================== */
 function initCurrentYear() {
-    const yearSpan = document.getElementById('current-year');
-    if (yearSpan) {
-        yearSpan.textContent = new Date().getFullYear();
+    const yearEl = document.getElementById('current-year');
+    if (yearEl) {
+        yearEl.textContent = new Date().getFullYear();
     }
 }

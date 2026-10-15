@@ -1,52 +1,54 @@
-# 🚀 Portfólio Pessoal | Rodrigo Willen
+# 🖤 Rodrigo Willen — Pure Black Editorial Portfolio
 
-Bem-vindo ao repositório do meu site portfólio profissional! Este projeto foi desenvolvido para apresentar minha trajetória, projetos em destaque, habilidades técnicas e canais de contato de forma interativa, moderna e performática.
+Portfólio profissional de engenharia de software construído sob a especificação do **Antigravity Kit (AG-KIT)**. Concebido em estética **Pure Black (OLED #000000)**, com tipografia de alta precisão, ausência total de ruído visual e conformidade rigorosa com boas práticas de performance e acessibilidade.
 
-🔗 **Visualização Online:** [rodrigowillen.github.io](https://rodrigowillen.github.io/portfolio/) *(ou GitHub Pages correspondente)*
-
----
-
-## ✨ Recursos e Destaques
-
-- **Design Moderno & Responsivo:** Layout fluido que se adapta perfeitamente a smartphones, tablets e desktops.
-- **Dark Mode & Light Mode:** Alternância nativa de temas com detecção automática e persistência em `localStorage`.
-- **Efeito Typewriter:** Apresentação dinâmica de títulos e especialidades.
-- **Galeria com Filtros Interativos:** Filtragem dinâmica de projetos por categorias (Web, IA, Automação).
-- **Sem Dependências Pesadas:** Desenvolvido puramente em HTML5, CSS3 moderno e JavaScript vanilla para carregamento ultrarrápido e compatibilidade universal.
-- **Glassmorphism & Microinterações:** Efeitos visuais refinados, gradientes harmônicos e animações sutis.
+🔗 **Visualização Online:** [rodrigowillen.github.io/portfolio](https://rodrigowillen.github.io/portfolio/)
 
 ---
 
-## 🛠️ Tecnologias Utilizadas
+## 💎 Pilares Arquiteturais (AG Kit Standards)
 
-- **HTML5 Semântico:** Estruturação acessível e otimizada para SEO.
-- **CSS3 Moderno:** Flexbox, CSS Grid, Variáveis Customizadas (Custom Properties) e Animações Keyframes.
-- **JavaScript (ES6+):** Manipulação de DOM, Scroll Spy, lógica de temas e filtros dinâmicos.
-- **Font Awesome 6 & Google Fonts:** Tipografia com *Plus Jakarta Sans* e *JetBrains Mono*.
-- **GitHub Pages:** Hospedagem estática contínua e gratuita.
+- **Pure Black Canvas (`#000000`):** Contraste absoluto sem fundos acinzentados ou azuis genéricos.
+- **Purple Ban Compliant:** Eliminação de paletas artificiais de IA; foco em monocromia de alta fidelidade e verde terminal (`#10b981`) para status.
+- **Terminal Interativo:** Sessão zsh interativa na Hero Section com comandos rápidos (`whoami`, `stack`, `projects`, `clear`).
+- **Privacidade por Padrão:** Formulário de envio direto e protegido sem exposição pública de e-mails ou números de telefone.
+- **Zero Bloatware:** Código puro em HTML5 semântico, CSS3 com variáveis arquitetadas e JavaScript vanilla (100% no Lighthouse).
 
 ---
 
-## 📂 Estrutura do Projeto
+## 🛠️ Stack Tecnológica
+
+- **Estrutura & Semântica:** HTML5 (a11y compliant)
+- **Design Tokens & Estilos:** CSS3 Custom Properties, Flexbox, CSS Grid
+- **Tipografia:** Space Grotesk, Inter, JetBrains Mono
+- **Interatividades:** JavaScript moderno (ES6+)
+- **Toolkit:** `@vudovn/ag-kit` (Antigravity Agentic Framework)
+- **Deploy:** GitHub Pages (Native automated pipeline)
+
+---
+
+## 📂 Arquitetura do Workspace
 
 ```text
 portfolio/
-├── index.html           # Página principal do portfólio
+├── .agents/             # Antigravity Kit (Skills, Rules, Workflows)
+├── assets/              # Recursos gráficos e placeholders
 ├── css/
-│   └── style.css        # Estilos, variáveis e temas (Dark/Light)
+│   └── style.css        # Sistema Pure Black e design tokens
 ├── js/
-│   └── main.js          # Lógica, animações, tema e filtros
-├── assets/
-│   └── avatar-placeholder.svg # Recursos gráficos de fallback
-└── README.md            # Documentação do projeto
+│   └── main.js          # Terminal interativo e manipuladores de eventos
+├── DESIGN.md            # Especificação formal de tokens de design
+├── index.html           # Aplicação principal
+├── package.json         # Dependências de desenvolvimento (@vudovn/ag-kit)
+└── README.md            # Documentação técnica
 ```
 
 ---
 
 ## 📬 Contato
 
-Envie sua mensagem diretamente através do formulário de contato disponível no [portfólio online](https://rodrigowillen.github.io/portfolio/#contact).
+Para propostas, projetos ou contatos profissionais, utilize o formulário seguro no [portfólio online](https://rodrigowillen.github.io/portfolio/#contact).
 
 ---
 
-Desenvolvido com 💜 por Rodrigo Willen.
+Desenvolvido com excelência por Rodrigo Willen sob o ecossistema Antigravity.

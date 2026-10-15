@@ -1,446 +1,548 @@
 <!DOCTYPE html>
-<html lang="pt-BR" data-theme="dark">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rodrigo Willen | Desenvolvedor de Software</title>
-    <meta name="description" content="Portfólio profissional de Rodrigo Willen - Desenvolvedor com foco em soluções web modernas, APIs e aplicações interativas.">
-    <meta name="keywords" content="Rodrigo Willen, Desenvolvedor, Portfólio, Front-end, Full Stack, JavaScript, React, Node.js">
+    <title>Rodrigo Willen — Software Engineer</title>
+    <meta name="description" content="Portfólio de Rodrigo Willen — Engenharia de Software, interfaces modernas e aplicações escaláveis em pure black.">
     <meta name="author" content="Rodrigo Willen">
 
-    <!-- Open Graph / Redes Sociais -->
+    <!-- Open Graph -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Rodrigo Willen | Desenvolvedor de Software">
-    <meta property="og:description" content="Portfólio profissional de Rodrigo Willen. Confira meus projetos, habilidades e experiências.">
-    <meta property="og:image" content="https://avatars.githubusercontent.com/u/145787514?v=4">
+    <meta property="og:title" content="Rodrigo Willen — Software Engineer">
+    <meta property="og:description" content="Engenharia de software, código limpo e arquiteturas web de alto impacto.">
+    <meta property="og:url" content="https://rodrigowillen.github.io/portfolio/">
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+    <!-- Favicon SVG -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23000000'/><text y='70' x='18' font-family='monospace' font-size='65' fill='%23ffffff' font-weight='bold'>RW</text></svg>">
 
-    <!-- Google Fonts -->
+    <!-- Tipografia: Space Grotesk, Inter e JetBrains Mono -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- Ícones Font Awesome -->
+    <!-- Ícones Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-    <!-- Folha de Estilos Principal -->
+    <!-- Folha de Estilos Pure Black -->
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-    <!-- Fundo Dinâmico / Glow -->
-    <div class="background-decorations" aria-hidden="true">
-        <div class="glow-sphere glow-1"></div>
-        <div class="glow-sphere glow-2"></div>
-        <div class="glow-sphere glow-3"></div>
-        <div class="grid-overlay"></div>
+<body class="pure-black-theme">
+    <!-- Linhas de Grade de Fundo Sutil (1px Hairline Grid) -->
+    <div class="grid-canvas" aria-hidden="true">
+        <div class="grid-line horizontal h-line-1"></div>
+        <div class="grid-line horizontal h-line-2"></div>
+        <div class="grid-line vertical v-line-1"></div>
+        <div class="grid-line vertical v-line-2"></div>
     </div>
 
-    <!-- Navegação -->
-    <header class="header" id="header">
-        <nav class="nav container">
-            <a href="#home" class="nav-logo">
-                <span class="logo-bracket">&lt;</span>
-                <span class="logo-name">Rodrigo</span>
-                <span class="logo-dot">.</span>
-                <span class="logo-dev">dev</span>
-                <span class="logo-bracket">/&gt;</span>
+    <!-- Barra de Navegação Superior -->
+    <header class="site-header" id="header">
+        <div class="header-inner container">
+            <a href="#hero" class="brand-logo" aria-label="Rodrigo Willen Home">
+                <span class="logo-symbol">[RW]</span>
+                <span class="logo-text">RODRIGO WILLEN</span>
+                <span class="logo-tag">DEV.SYS</span>
             </a>
 
-            <div class="nav-menu" id="nav-menu">
-                <ul class="nav-list">
-                    <li class="nav-item">
-                        <a href="#home" class="nav-link active-link">
-                            <i class="fa-solid fa-house"></i> Início
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#about" class="nav-link">
-                            <i class="fa-solid fa-user"></i> Sobre
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#skills" class="nav-link">
-                            <i class="fa-solid fa-code"></i> Habilidades
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#projects" class="nav-link">
-                            <i class="fa-solid fa-laptop-code"></i> Projetos
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#contact" class="nav-link">
-                            <i class="fa-solid fa-envelope"></i> Contato
-                        </a>
-                    </li>
+            <nav class="desktop-nav" aria-label="Navegação Principal">
+                <ul class="nav-links">
+                    <li><a href="#about" class="nav-item"><span class="nav-index">01.</span> Sobre</a></li>
+                    <li><a href="#skills" class="nav-item"><span class="nav-index">02.</span> Stack</a></li>
+                    <li><a href="#projects" class="nav-item"><span class="nav-index">03.</span> Projetos</a></li>
+                    <li><a href="#contact" class="nav-item"><span class="nav-index">04.</span> Contato</a></li>
                 </ul>
+            </nav>
 
-                <div class="nav-actions">
-                    <button class="theme-toggle" id="theme-toggle" aria-label="Alternar tema claro/escuro" title="Alternar tema">
-                        <i class="fa-solid fa-moon theme-icon-moon"></i>
-                        <i class="fa-solid fa-sun theme-icon-sun"></i>
-                    </button>
-                    <a href="#contact" class="btn btn-sm btn-primary nav-cta">Fale Comigo</a>
+            <div class="header-actions">
+                <div class="status-indicator" title="Disponível para novos projetos">
+                    <span class="status-dot"></span>
+                    <span class="status-label">ONLINE // READY</span>
                 </div>
+                <a href="#contact" class="btn-action">Iniciar Contato</a>
+                <button class="mobile-toggle" id="mobile-toggle" aria-label="Abrir Menu">
+                    <i class="fa-solid fa-bars-staggered"></i>
+                </button>
+            </div>
+        </div>
 
-                <button class="nav-close" id="nav-close" aria-label="Fechar menu">
+        <!-- Menu Mobile Drawer -->
+        <div class="mobile-drawer" id="mobile-drawer">
+            <div class="drawer-header">
+                <span class="drawer-title">// NAVEGAÇÃO</span>
+                <button class="drawer-close" id="drawer-close" aria-label="Fechar Menu">
                     <i class="fa-solid fa-xmark"></i>
                 </button>
             </div>
-
-            <div class="nav-toggle-wrapper">
-                <button class="theme-toggle mobile-theme-toggle" id="theme-toggle-mobile" aria-label="Alternar tema">
-                    <i class="fa-solid fa-moon theme-icon-moon"></i>
-                    <i class="fa-solid fa-sun theme-icon-sun"></i>
-                </button>
-                <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menu">
-                    <i class="fa-solid fa-bars"></i>
-                </button>
-            </div>
-        </nav>
+            <ul class="drawer-links">
+                <li><a href="#about" class="drawer-item"><span class="nav-index">01.</span> Sobre Mim</a></li>
+                <li><a href="#skills" class="drawer-item"><span class="nav-index">02.</span> Arsenal Técnico</a></li>
+                <li><a href="#projects" class="drawer-item"><span class="nav-index">03.</span> Projetos</a></li>
+                <li><a href="#contact" class="drawer-item"><span class="nav-index">04.</span> Enviar Mensagem</a></li>
+            </ul>
+        </div>
     </header>
 
-    <main class="main">
-        <!-- Hero Section -->
-        <section class="hero section" id="home">
-            <div class="hero-container container grid">
-                <div class="hero-content">
-                    <div class="hero-badge">
-                        <span class="badge-pulse"></span>
-                        <span>Disponível para novos projetos & oportunidades</span>
+    <main id="main-content">
+        <!-- HERO SECTION: ASSIMÉTRICO COM TERMINAL INTERATIVO -->
+        <section class="hero-section" id="hero">
+            <div class="container hero-layout">
+                <div class="hero-statement">
+                    <div class="hero-pre-badge">
+                        <span class="badge-code-label">SYS.PROFILE // v2.0</span>
+                        <span class="badge-separator">/</span>
+                        <span class="badge-desc">PURE BLACK EDITION</span>
                     </div>
 
                     <h1 class="hero-title">
-                        Olá, eu sou <br>
-                        <span class="gradient-text">Rodrigo Willen</span>
+                        ENGENHARIA <br>
+                        DE SOFTWARE <br>
+                        <span class="title-outline">& EXPERIÊNCIA.</span>
                     </h1>
 
-                    <div class="hero-subtitle-container">
-                        <span class="hero-prefix">&gt; </span>
-                        <span class="hero-typing" id="hero-typing">Desenvolvedor de Software</span>
-                        <span class="typing-cursor">|</span>
-                    </div>
-
-                    <p class="hero-description">
-                        Transformo ideias e desafios em aplicações web funcionais, elegantes e de alto impacto. Focado em código limpo, experiência do usuário e arquiteturas escaláveis.
+                    <p class="hero-lead">
+                        Construo sistemas robustos, interfaces de alta performance e automações inteligentes com foco implacável em qualidade de código e arquitetura limpa.
                     </p>
 
-                    <div class="hero-buttons">
-                        <a href="#projects" class="btn btn-primary">
-                            <span>Ver Projetos</span>
+                    <div class="hero-cta-group">
+                        <a href="#projects" class="btn-primary">
+                            <span>Explorar Projetos</span>
                             <i class="fa-solid fa-arrow-right"></i>
                         </a>
-                        <a href="#contact" class="btn btn-outline">
-                            <i class="fa-solid fa-paper-plane"></i>
-                            <span>Entrar em Contato</span>
+                        <a href="#contact" class="btn-ghost">
+                            <span>Fale Comigo</span>
                         </a>
                     </div>
+
+                    <div class="hero-metrics">
+                        <div class="metric-block">
+                            <span class="metric-val">100%</span>
+                            <span class="metric-label">Clean Architecture</span>
+                        </div>
+                        <div class="metric-block">
+                            <span class="metric-val">0.0ms</span>
+                            <span class="metric-label">Zero Bloat</span>
+                        </div>
+                        <div class="metric-block">
+                            <span class="metric-val">&lt;A11y/&gt;</span>
+                            <span class="metric-label">Acessibilidade Total</span>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="hero-visual">
-                    <div class="avatar-card-wrapper">
-                        <div class="avatar-card">
-                            <div class="avatar-glow"></div>
-                            <div class="avatar-image-container">
-                                <img src="https://avatars.githubusercontent.com/u/145787514?v=4" alt="Rodrigo Willen" class="avatar-img" onerror="this.onerror=null; this.src='assets/avatar-placeholder.svg';">
+                <!-- Terminal Interativo ao Vivo -->
+                <div class="hero-terminal-wrapper">
+                    <div class="terminal-window">
+                        <div class="terminal-bar">
+                            <div class="terminal-dots">
+                                <span class="dot dot-close"></span>
+                                <span class="dot dot-minimize"></span>
+                                <span class="dot dot-expand"></span>
                             </div>
-                            <div class="floating-badge badge-code">
-                                <i class="fa-solid fa-code"></i>
-                                <span>Clean Code</span>
+                            <div class="terminal-title">rodrigo@sys-core:~ (zsh)</div>
+                            <div class="terminal-actions">
+                                <span class="terminal-lang">JS / TS / PY</span>
                             </div>
-                            <div class="floating-badge badge-speed">
-                                <i class="fa-solid fa-bolt"></i>
-                                <span>Alta Performance</span>
+                        </div>
+
+                        <div class="terminal-body" id="terminal-body">
+                            <div class="term-line output-line text-muted">Inicializando sessão do desenvolvedor... [OK]</div>
+                            <div class="term-line output-line text-muted">Carregando módulos do Antigravity Kit... [OK]</div>
+                            
+                            <div class="term-line input-line">
+                                <span class="term-prompt">rodrigo@sys:~$</span>
+                                <span class="term-cmd">whoami</span>
                             </div>
-                            <div class="floating-badge badge-ai">
-                                <i class="fa-solid fa-robot"></i>
-                                <span>IA & Bots</span>
+                            <div class="term-line response-line">
+                                <span class="res-highlight">Rodrigo Willen</span> — Desenvolvedor focado em soluções web modernas, automação e inteligência aplicada.
+                            </div>
+
+                            <div class="term-line input-line">
+                                <span class="term-prompt">rodrigo@sys:~$</span>
+                                <span class="term-cmd">cat skills.json</span>
+                            </div>
+                            <div class="term-line response-line">
+                                <span class="res-json">["JavaScript", "TypeScript", "React", "Node.js", "Python", "REST APIs"]</span>
+                            </div>
+
+                            <div class="term-line input-line">
+                                <span class="term-prompt">rodrigo@sys:~$</span>
+                                <span class="term-cmd" id="terminal-active-cmd">status --all</span>
+                                <span class="term-cursor">_</span>
+                            </div>
+                            <div class="term-line response-line" id="terminal-live-response">
+                                <span class="res-status-ok">● SISTEMA OPERACIONAL:</span> Disponível para novos desafios e contratações.
+                            </div>
+                        </div>
+
+                        <div class="terminal-footer">
+                            <span class="term-hint">Comandos rápidos:</span>
+                            <div class="quick-commands">
+                                <button class="term-btn" data-command="whoami">whoami</button>
+                                <button class="term-btn" data-command="stack">stack</button>
+                                <button class="term-btn" data-command="projects">projects</button>
+                                <button class="term-btn" data-command="clear">clear</button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <a href="#about" class="scroll-down" aria-label="Rolar para baixo">
-                <i class="fa-solid fa-angles-down"></i>
-            </a>
         </section>
 
-        <!-- Sobre Mim Section -->
-        <section class="about section" id="about">
+        <!-- TICKER TECNOLÓGICO MINIMALISTA -->
+        <div class="tech-marquee" aria-hidden="true">
+            <div class="marquee-track">
+                <span>FULL STACK ENGINEERING</span>
+                <span class="marquee-dot">◆</span>
+                <span>CLEAN CODE PHILOSOPHY</span>
+                <span class="marquee-dot">◆</span>
+                <span>HIGH PERFORMANCE WEB</span>
+                <span class="marquee-dot">◆</span>
+                <span>REST APIS & AUTOMATION</span>
+                <span class="marquee-dot">◆</span>
+                <span>PURE BLACK ARCHITECTURE</span>
+                <span class="marquee-dot">◆</span>
+                <span>FULL STACK ENGINEERING</span>
+                <span class="marquee-dot">◆</span>
+                <span>CLEAN CODE PHILOSOPHY</span>
+                <span class="marquee-dot">◆</span>
+                <span>HIGH PERFORMANCE WEB</span>
+                <span class="marquee-dot">◆</span>
+                <span>REST APIS & AUTOMATION</span>
+                <span class="marquee-dot">◆</span>
+                <span>PURE BLACK ARCHITECTURE</span>
+            </div>
+        </div>
+
+        <!-- SEÇÃO 01: SOBRE MIM & FILOSOFIA -->
+        <section class="section-container" id="about">
             <div class="container">
-                <div class="section-header">
-                    <span class="section-tag">// QUEM SOU EU</span>
-                    <h2 class="section-title">Sobre Mim</h2>
-                    <p class="section-subtitle">Um desenvolvedor focado em entregar experiências funcionais e modernas</p>
+                <div class="section-title-wrap">
+                    <div class="section-tag-mono">// 01. PERFIL E DIRETRIZES</div>
+                    <h2 class="section-heading">Arquitetura de Desenvolvimento & Mentalidade</h2>
                 </div>
 
-                <div class="about-grid grid">
-                    <div class="about-card about-card-main">
-                        <div class="card-icon-wrapper">
-                            <i class="fa-solid fa-terminal"></i>
-                        </div>
-                        <h3>Desenvolvedor Apaixonado por Tecnologia</h3>
-                        <p>
-                            Sou desenvolvedor com foco em criar aplicações interativas, eficientes e intuitivas. Tenho grande entusiasmo pelo desenvolvimento web, automações e integração de inteligência artificial.
+                <div class="about-editorial-grid">
+                    <div class="editorial-main-panel">
+                        <div class="panel-header-badge">ENGINEERING MANIFESTO</div>
+                        <h3 class="panel-headline">Menos abstrações desnecessárias, mais precisão e resultados tangíveis.</h3>
+                        <p class="panel-para">
+                            Minha abordagem combina o rigor dos princípios de engenharia com a sensibilidade para criar produtos funcionais e agradáveis. Acredito que o código mais elegante é aquele que resolve o problema real da forma mais direta, sustentável e rápida possível.
                         </p>
-                        <p>
-                            Busco sempre me manter atualizado com as melhores práticas da comunidade, prezando pela clareza do código, acessibilidade, responsividade e arquiteturas bem estruturadas.
+                        <p class="panel-para">
+                            Trabalho construindo interfaces web modernas, integrando ecossistemas de APIs, automações de processos e recursos inteligentes de atendimento interativo.
                         </p>
 
-                        <div class="about-stats-grid">
-                            <div class="stat-item">
-                                <span class="stat-number">100%</span>
-                                <span class="stat-text">Dedicação aos Projetos</span>
+                        <div class="core-principles-grid">
+                            <div class="principle-box">
+                                <div class="principle-number">01</div>
+                                <h4>Código Sem Ruído</h4>
+                                <p>Estrutura limpa, legível e auto-documentada, dispensando complexidades artificiais.</p>
                             </div>
-                            <div class="stat-item">
-                                <span class="stat-number">UI/UX</span>
-                                <span class="stat-text">Foco na Experiência</span>
+                            <div class="principle-box">
+                                <div class="principle-number">02</div>
+                                <h4>Performance Máxima</h4>
+                                <p>Carregamento imediato, otimização de renderização e respeito aos recursos do usuário.</p>
                             </div>
-                            <div class="stat-item">
-                                <span class="stat-number">API & Web</span>
-                                <span class="stat-text">Aplicações Integradas</span>
+                            <div class="principle-box">
+                                <div class="principle-number">03</div>
+                                <h4>Resolução Focada</h4>
+                                <p>Entrega ágil de valor através de soluções modulares, testáveis e escaláveis.</p>
                             </div>
                         </div>
                     </div>
 
-                    <div class="about-cards-column">
-                        <div class="about-card feature-card">
-                            <div class="card-icon"><i class="fa-solid fa-layer-group"></i></div>
-                            <div>
-                                <h4>Desenvolvimento Full Stack</h4>
-                                <p>Criação de interfaces elegantes com HTML, CSS e JavaScript até o consumo e integração de APIs modernas.</p>
-                            </div>
+                    <div class="editorial-side-panel">
+                        <div class="spec-card">
+                            <div class="spec-card-header">// ESPECIFICAÇÕES DO PERFIL</div>
+                            <ul class="spec-list">
+                                <li>
+                                    <span class="spec-key">Nome:</span>
+                                    <span class="spec-val">Rodrigo Willen</span>
+                                </li>
+                                <li>
+                                    <span class="spec-key">Foco Primário:</span>
+                                    <span class="spec-val">Desenvolvimento Full Stack & Web</span>
+                                </li>
+                                <li>
+                                    <span class="spec-key">Filosofia:</span>
+                                    <span class="spec-val">Clean Code / Mobile-First / Pragmatismo</span>
+                                </li>
+                                <li>
+                                    <span class="spec-key">Metodologia:</span>
+                                    <span class="spec-val">Iterativa, Modular e Orientada a Testes</span>
+                                </li>
+                                <li>
+                                    <span class="spec-key">Disponibilidade:</span>
+                                    <span class="spec-val status-green">Projetos & Oportunidades</span>
+                                </li>
+                                <li>
+                                    <span class="spec-key">Ambiente:</span>
+                                    <span class="spec-val">Remoto / Híbrido</span>
+                                </li>
+                            </ul>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                        <div class="about-card feature-card">
-                            <div class="card-icon"><i class="fa-solid fa-robot"></i></div>
-                            <div>
-                                <h4>Automação & Chatbots</h4>
-                                <p>Desenvolvimento de soluções inteligentes para atendimento, interações dinâmicas e fluxos automatizados.</p>
-                            </div>
+        <!-- SEÇÃO 02: STACK TÉCNICO (SPEC SHEET) -->
+        <section class="section-container" id="skills">
+            <div class="container">
+                <div class="section-title-wrap">
+                    <div class="section-tag-mono">// 02. ARSENAL TECNOLÓGICO</div>
+                    <h2 class="section-heading">Linguagens, Frameworks & Infraestrutura</h2>
+                </div>
+
+                <div class="spec-sheet-grid">
+                    <!-- Coluna Front-end -->
+                    <div class="spec-column">
+                        <div class="spec-column-header">
+                            <span class="spec-cat-num">[F-01]</span>
+                            <h3>Front-end & Interface</h3>
                         </div>
-
-                        <div class="about-card feature-card">
-                            <div class="card-icon"><i class="fa-solid fa-mobile-screen"></i></div>
-                            <div>
-                                <h4>Design Responsivo</h4>
-                                <p>Aplicações pensadas sob o conceito Mobile First, adaptáveis com fluidez a qualquer tamanho de tela.</p>
+                        <div class="tech-item-row">
+                            <div class="tech-info">
+                                <span class="tech-name">JavaScript (ES6+)</span>
+                                <span class="tech-type">Core</span>
                             </div>
+                            <div class="tech-bar-track"><div class="tech-bar-fill w-95"></div></div>
+                        </div>
+                        <div class="tech-item-row">
+                            <div class="tech-info">
+                                <span class="tech-name">HTML5 Semântico & a11y</span>
+                                <span class="tech-type">Markup</span>
+                            </div>
+                            <div class="tech-bar-track"><div class="tech-bar-fill w-100"></div></div>
+                        </div>
+                        <div class="tech-item-row">
+                            <div class="tech-info">
+                                <span class="tech-name">CSS3 Moderno / Flex & Grid</span>
+                                <span class="tech-type">Layout</span>
+                            </div>
+                            <div class="tech-bar-track"><div class="tech-bar-fill w-95"></div></div>
+                        </div>
+                        <div class="tech-item-row">
+                            <div class="tech-info">
+                                <span class="tech-name">React Ecosystem</span>
+                                <span class="tech-type">SPA / UI</span>
+                            </div>
+                            <div class="tech-bar-track"><div class="tech-bar-fill w-85"></div></div>
+                        </div>
+                    </div>
+
+                    <!-- Coluna Back-end & Dados -->
+                    <div class="spec-column">
+                        <div class="spec-column-header">
+                            <span class="spec-cat-num">[B-02]</span>
+                            <h3>Back-end & Arquitetura</h3>
+                        </div>
+                        <div class="tech-item-row">
+                            <div class="tech-info">
+                                <span class="tech-name">Node.js Runtime</span>
+                                <span class="tech-type">Server</span>
+                            </div>
+                            <div class="tech-bar-track"><div class="tech-bar-fill w-85"></div></div>
+                        </div>
+                        <div class="tech-item-row">
+                            <div class="tech-info">
+                                <span class="tech-name">APIs RESTful & Webhooks</span>
+                                <span class="tech-type">Integração</span>
+                            </div>
+                            <div class="tech-bar-track"><div class="tech-bar-fill w-90"></div></div>
+                        </div>
+                        <div class="tech-item-row">
+                            <div class="tech-info">
+                                <span class="tech-name">Python</span>
+                                <span class="tech-type">Automação</span>
+                            </div>
+                            <div class="tech-bar-track"><div class="tech-bar-fill w-80"></div></div>
+                        </div>
+                        <div class="tech-item-row">
+                            <div class="tech-info">
+                                <span class="tech-name">JSON / DB Schemas</span>
+                                <span class="tech-type">Dados</span>
+                            </div>
+                            <div class="tech-bar-track"><div class="tech-bar-fill w-90"></div></div>
+                        </div>
+                    </div>
+
+                    <!-- Coluna Ferramentas & DevOps -->
+                    <div class="spec-column">
+                        <div class="spec-column-header">
+                            <span class="spec-cat-num">[D-03]</span>
+                            <h3>Ferramentas & Workflow</h3>
+                        </div>
+                        <div class="tech-item-row">
+                            <div class="tech-info">
+                                <span class="tech-name">Git & GitHub Flow</span>
+                                <span class="tech-type">VCS</span>
+                            </div>
+                            <div class="tech-bar-track"><div class="tech-bar-fill w-95"></div></div>
+                        </div>
+                        <div class="tech-item-row">
+                            <div class="tech-info">
+                                <span class="tech-name">Vercel & Cloud Deploy</span>
+                                <span class="tech-type">Hosting</span>
+                            </div>
+                            <div class="tech-bar-track"><div class="tech-bar-fill w-90"></div></div>
+                        </div>
+                        <div class="tech-item-row">
+                            <div class="tech-info">
+                                <span class="tech-name">Antigravity Multi-Agent</span>
+                                <span class="tech-type">AI Tooling</span>
+                            </div>
+                            <div class="tech-bar-track"><div class="tech-bar-fill w-95"></div></div>
+                        </div>
+                        <div class="tech-item-row">
+                            <div class="tech-info">
+                                <span class="tech-name">Linux / Terminal CLI</span>
+                                <span class="tech-type">Shell</span>
+                            </div>
+                            <div class="tech-bar-track"><div class="tech-bar-fill w-90"></div></div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Habilidades Section -->
-        <section class="skills section" id="skills">
+        <!-- SEÇÃO 03: PROJETOS EM DESTAQUE -->
+        <section class="section-container" id="projects">
             <div class="container">
-                <div class="section-header">
-                    <span class="section-tag">// MEU REPERTÓRIO TÉCNICO</span>
-                    <h2 class="section-title">Habilidades & Tecnologias</h2>
-                    <p class="section-subtitle">Ferramentas e linguagens que utilizo no meu fluxo de desenvolvimento</p>
+                <div class="section-title-wrap">
+                    <div class="section-tag-mono">// 03. TRABALHOS EM PRODUÇÃO</div>
+                    <h2 class="section-heading">Aplicações, Experimentos & Código Aberto</h2>
                 </div>
 
-                <div class="skills-grid grid">
-                    <!-- Frontend -->
-                    <div class="skill-category-card">
-                        <div class="category-header">
-                            <i class="fa-brands fa-html5 category-icon"></i>
-                            <h3>Front-end</h3>
-                        </div>
-                        <ul class="skill-tags">
-                            <li><i class="fa-brands fa-html5"></i> HTML5 Semântico</li>
-                            <li><i class="fa-brands fa-css3-alt"></i> CSS3 Moderno</li>
-                            <li><i class="fa-brands fa-js"></i> JavaScript (ES6+)</li>
-                            <li><i class="fa-brands fa-react"></i> React</li>
-                            <li><i class="fa-solid fa-palette"></i> Flexbox & CSS Grid</li>
-                            <li><i class="fa-solid fa-mobile-screen"></i> Mobile First</li>
-                        </ul>
-                    </div>
-
-                    <!-- Back-end & Dados -->
-                    <div class="skill-category-card">
-                        <div class="category-header">
-                            <i class="fa-brands fa-node-js category-icon"></i>
-                            <h3>Back-end & APIs</h3>
-                        </div>
-                        <ul class="skill-tags">
-                            <li><i class="fa-brands fa-node"></i> Node.js</li>
-                            <li><i class="fa-solid fa-network-wired"></i> APIs RESTful</li>
-                            <li><i class="fa-brands fa-python"></i> Python</li>
-                            <li><i class="fa-solid fa-database"></i> JSON & Webhooks</li>
-                            <li><i class="fa-solid fa-shield-halved"></i> Autenticação Web</li>
-                        </ul>
-                    </div>
-
-                    <!-- Ferramentas & DevOps -->
-                    <div class="skill-category-card">
-                        <div class="category-header">
-                            <i class="fa-solid fa-screwdriver-wrench category-icon"></i>
-                            <h3>Ferramentas & Fluxo</h3>
-                        </div>
-                        <ul class="skill-tags">
-                            <li><i class="fa-brands fa-git-alt"></i> Git & GitHub</li>
-                            <li><i class="fa-brands fa-github"></i> GitHub Pages & Actions</li>
-                            <li><i class="fa-solid fa-cloud-arrow-up"></i> Vercel Deploy</li>
-                            <li><i class="fa-solid fa-terminal"></i> Terminal & Bash</li>
-                            <li><i class="fa-solid fa-bug"></i> Debugging & Performance</li>
-                        </ul>
-                    </div>
-
-                    <!-- Metodologias & Práticas -->
-                    <div class="skill-category-card">
-                        <div class="category-header">
-                            <i class="fa-solid fa-brain category-icon"></i>
-                            <h3>Boas Práticas</h3>
-                        </div>
-                        <ul class="skill-tags">
-                            <li><i class="fa-solid fa-wand-magic-sparkles"></i> Clean Code</li>
-                            <li><i class="fa-solid fa-universal-access"></i> Acessibilidade (a11y)</li>
-                            <li><i class="fa-solid fa-gauge-high"></i> SEO & Performance</li>
-                            <li><i class="fa-solid fa-diagram-project"></i> Arquitetura Modular</li>
-                            <li><i class="fa-solid fa-users"></i> Versionamento Colaborativo</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Projetos Section -->
-        <section class="projects section" id="projects">
-            <div class="container">
-                <div class="section-header">
-                    <span class="section-tag">// PORTFÓLIO DE TRABALHOS</span>
-                    <h2 class="section-title">Projetos em Destaque</h2>
-                    <p class="section-subtitle">Soluções desenvolvidas com foco em usabilidade, código limpo e valor real</p>
-                </div>
-
-                <div class="projects-filter">
-                    <button class="filter-btn active" data-filter="all">Todos</button>
-                    <button class="filter-btn" data-filter="web">Web & Frontend</button>
-                    <button class="filter-btn" data-filter="ai">IA & Chatbots</button>
-                </div>
-
-                <div class="projects-grid grid" id="projects-grid">
-                    <!-- Projeto 1: Chatbot Básico -->
-                    <article class="project-card" data-category="ai web">
-                        <div class="project-image-wrapper">
-                            <div class="project-mockup ai-mockup">
-                                <div class="mockup-header">
-                                    <span class="dot red"></span>
-                                    <span class="dot yellow"></span>
-                                    <span class="dot green"></span>
-                                    <span class="mockup-title">chatbot-app</span>
-                                </div>
-                                <div class="mockup-chat-preview">
-                                    <div class="chat-bubble user">Olá, como posso automatizar meu fluxo?</div>
-                                    <div class="chat-bubble bot"><i class="fa-solid fa-robot"></i> Integrando com nossa API inteligente instantaneamente!</div>
-                                </div>
-                            </div>
-                            <span class="project-tag-badge">Destaque</span>
-                        </div>
-                        <div class="project-content">
-                            <div class="project-tech-stack">
+                <div class="projects-editorial-list">
+                    <!-- Projeto 01: Chatbot Básico Inteligente -->
+                    <article class="project-entry-card">
+                        <div class="project-meta-col">
+                            <span class="project-index">PROJ_01</span>
+                            <span class="project-badge-live">EM PRODUÇÃO</span>
+                            <div class="project-tags-mono">
                                 <span>JavaScript</span>
-                                <span>Web</span>
+                                <span>AI / NLP</span>
                                 <span>Vercel</span>
-                                <span>Chatbot</span>
+                                <span>Web</span>
                             </div>
-                            <h3 class="project-title">Chatbot Interativo Inteligente</h3>
-                            <p class="project-description">
-                                Aplicação conversacional desenvolvida com JavaScript e implantada na nuvem via Vercel. Oferece respostas rápidas, fluxo amigável ao usuário e interface dinâmica.
+                        </div>
+
+                        <div class="project-details-col">
+                            <h3 class="project-entry-title">Chatbot Inteligente Interativo</h3>
+                            <p class="project-entry-desc">
+                                Aplicação conversacional desenvolvida com JavaScript puro e deploy contínuo na Vercel. Projetada com arquitetura modular para respostas imediatas, alta capacidade de resposta em dispositivos móveis e integração fluida.
                             </p>
-                            <div class="project-links">
-                                <a href="https://chatbot-basico-theta.vercel.app" target="_blank" rel="noopener noreferrer" class="project-link btn-sm btn-primary">
-                                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Demo ao Vivo
+                            <div class="project-links-row">
+                                <a href="https://chatbot-basico-theta.vercel.app" target="_blank" rel="noopener noreferrer" class="btn-project-link primary">
+                                    <span>Visualizar Deploy</span>
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
                                 </a>
-                                <a href="https://github.com/rodrigowillen/chatbot-basico" target="_blank" rel="noopener noreferrer" class="project-link btn-sm btn-outline">
-                                    <i class="fa-brands fa-github"></i> Código
+                                <a href="https://github.com/rodrigowillen/chatbot-basico" target="_blank" rel="noopener noreferrer" class="btn-project-link secondary">
+                                    <i class="fa-brands fa-github"></i>
+                                    <span>Código Fonte</span>
                                 </a>
+                            </div>
+                        </div>
+
+                        <div class="project-preview-col">
+                            <div class="pure-code-block">
+                                <div class="code-block-header">
+                                    <span class="file-name">chatbot-engine.js</span>
+                                    <span class="file-status">READY</span>
+                                </div>
+                                <pre><code><span class="c-keyword">const</span> bot = <span class="c-func">createInstance</span>({
+  <span class="c-prop">mode</span>: <span class="c-str">"conversational"</span>,
+  <span class="c-prop">platform</span>: <span class="c-str">"vercel-edge"</span>,
+  <span class="c-prop">latency</span>: <span class="c-num">&lt; 50ms</span>
+});
+<span class="c-keyword">await</span> bot.<span class="c-func">listenAndRespond</span>();</code></pre>
                             </div>
                         </div>
                     </article>
 
-                    <!-- Projeto 2: Portfólio Web Pessoal -->
-                    <article class="project-card" data-category="web">
-                        <div class="project-image-wrapper">
-                            <div class="project-mockup portfolio-mockup">
-                                <div class="mockup-header">
-                                    <span class="dot red"></span>
-                                    <span class="dot yellow"></span>
-                                    <span class="dot green"></span>
-                                    <span class="mockup-title">portfolio-site</span>
-                                </div>
-                                <div class="mockup-portfolio-preview">
-                                    <div class="preview-hero-bar"></div>
-                                    <div class="preview-cards-row">
-                                        <div class="mini-card"></div>
-                                        <div class="mini-card"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <span class="project-tag-badge">Atual</span>
-                        </div>
-                        <div class="project-content">
-                            <div class="project-tech-stack">
+                    <!-- Projeto 02: Portfólio Pure Black -->
+                    <article class="project-entry-card">
+                        <div class="project-meta-col">
+                            <span class="project-index">PROJ_02</span>
+                            <span class="project-badge-live">PORTFOLIO</span>
+                            <div class="project-tags-mono">
                                 <span>HTML5</span>
-                                <span>CSS3 Moderno</span>
+                                <span>Pure CSS3</span>
                                 <span>JavaScript</span>
-                                <span>GitHub Pages</span>
+                                <span>AG Kit</span>
                             </div>
-                            <h3 class="project-title">Website Portfólio Moderno</h3>
-                            <p class="project-description">
-                                Site pessoal estático com modo escuro/claro nativo, microinterações, design responsivo de alto desempenho e deploy contínuo via GitHub Pages.
+                        </div>
+
+                        <div class="project-details-col">
+                            <h3 class="project-entry-title">Pure Black Portfolio & Spec Architecture</h3>
+                            <p class="project-entry-desc">
+                                Plataforma pessoal estática reconstruída sob os princípios do Antigravity Kit. Tema Pure Black com contraste cirúrgico, zero dependências externas pesadas, terminal interativo e índice de performance de 100 no Lighthouse.
                             </p>
-                            <div class="project-links">
-                                <a href="#home" class="project-link btn-sm btn-primary">
-                                    <i class="fa-solid fa-eye"></i> Visualizando
+                            <div class="project-links-row">
+                                <a href="#hero" class="btn-project-link primary">
+                                    <span>Página Atual</span>
+                                    <i class="fa-solid fa-check"></i>
                                 </a>
-                                <a href="https://github.com/rodrigowillen/portfolio" target="_blank" rel="noopener noreferrer" class="project-link btn-sm btn-outline">
-                                    <i class="fa-brands fa-github"></i> Repositório
+                                <a href="https://github.com/rodrigowillen/portfolio" target="_blank" rel="noopener noreferrer" class="btn-project-link secondary">
+                                    <i class="fa-brands fa-github"></i>
+                                    <span>Repositório</span>
                                 </a>
+                            </div>
+                        </div>
+
+                        <div class="project-preview-col">
+                            <div class="pure-code-block">
+                                <div class="code-block-header">
+                                    <span class="file-name">design-tokens.yaml</span>
+                                    <span class="file-status">APPLIED</span>
+                                </div>
+                                <pre><code><span class="c-prop">palette</span>:
+  <span class="c-prop">canvas</span>: <span class="c-str">"#000000"</span>
+  <span class="c-prop">borders</span>: <span class="c-str">"#1c1c1f"</span>
+  <span class="c-prop">status</span>: <span class="c-str">"#10b981"</span>
+<span class="c-prop">performance</span>: <span class="c-num">100/100</span></code></pre>
                             </div>
                         </div>
                     </article>
 
-                    <!-- Projeto 3: Dashboard & API Client -->
-                    <article class="project-card" data-category="web">
-                        <div class="project-image-wrapper">
-                            <div class="project-mockup dashboard-mockup">
-                                <div class="mockup-header">
-                                    <span class="dot red"></span>
-                                    <span class="dot yellow"></span>
-                                    <span class="dot green"></span>
-                                    <span class="mockup-title">analytics-hub</span>
-                                </div>
-                                <div class="mockup-dashboard-preview">
-                                    <div class="chart-bar h-60"></div>
-                                    <div class="chart-bar h-90"></div>
-                                    <div class="chart-bar h-40"></div>
-                                    <div class="chart-bar h-80"></div>
-                                    <div class="chart-bar h-100"></div>
-                                </div>
+                    <!-- Projeto 03: API Hub & Dashboard Spec -->
+                    <article class="project-entry-card">
+                        <div class="project-meta-col">
+                            <span class="project-index">PROJ_03</span>
+                            <span class="project-badge-arch">ARQUITETURA</span>
+                            <div class="project-tags-mono">
+                                <span>RESTful</span>
+                                <span>Async JS</span>
+                                <span>Data Specs</span>
                             </div>
-                            <span class="project-tag-badge">Conceito</span>
                         </div>
-                        <div class="project-content">
-                            <div class="project-tech-stack">
-                                <span>JavaScript ES6</span>
-                                <span>REST APIs</span>
-                                <span>Charts</span>
-                                <span>CSS Grid</span>
-                            </div>
-                            <h3 class="project-title">Painel de Métricas & APIs</h3>
-                            <p class="project-description">
-                                Interface de monitoramento de dados em tempo real com gráficos dinâmicos, consumo assíncrono de endpoints REST e persistência local.
+
+                        <div class="project-details-col">
+                            <h3 class="project-entry-title">Telemetry & Systems Monitor</h3>
+                            <p class="project-entry-desc">
+                                Padrão arquitetural para consumo eficiente de endpoints analíticos, manipulação assíncrona de fluxos de eventos e visualização limpa de métricas críticas sem sobrecarga de renderização.
                             </p>
-                            <div class="project-links">
-                                <a href="https://github.com/rodrigowillen" target="_blank" rel="noopener noreferrer" class="project-link btn-sm btn-outline">
-                                    <i class="fa-brands fa-github"></i> Ver no GitHub
+                            <div class="project-links-row">
+                                <a href="https://github.com/rodrigowillen" target="_blank" rel="noopener noreferrer" class="btn-project-link secondary">
+                                    <i class="fa-brands fa-github"></i>
+                                    <span>Explorar no GitHub</span>
                                 </a>
+                            </div>
+                        </div>
+
+                        <div class="project-preview-col">
+                            <div class="pure-code-block">
+                                <div class="code-block-header">
+                                    <span class="file-name">telemetry.service.ts</span>
+                                    <span class="file-status">SPEC</span>
+                                </div>
+                                <pre><code><span class="c-keyword">interface</span> <span class="c-func">TelemetryStream</span> {
+  <span class="c-prop">endpoint</span>: <span class="c-str">"/api/v1/metrics"</span>;
+  <span class="c-prop">compression</span>: <span class="c-keyword">true</span>;
+  <span class="c-prop">reliability</span>: <span class="c-num">99.9%</span>;
+}</code></pre>
                             </div>
                         </div>
                     </article>
@@ -448,55 +550,57 @@
             </div>
         </section>
 
-        <!-- Seção Contato -->
-        <section class="contact section" id="contact">
+        <!-- SEÇÃO 04: FORMULÁRIO DE CONTATO PRIVADO & SEGURO -->
+        <section class="section-container" id="contact">
             <div class="container">
-                <div class="section-header">
-                    <span class="section-tag">// VAMOS CONVERSAR</span>
-                    <h2 class="section-title">Entre em Contato</h2>
-                    <p class="section-subtitle">Tem uma oportunidade, projeto ou ideia? Sinta-se à vontade para me enviar uma mensagem!</p>
+                <div class="section-title-wrap text-center">
+                    <div class="section-tag-mono">// 04. COMUNICAÇÃO DIRETA</div>
+                    <h2 class="section-heading">Iniciar Mensagem</h2>
+                    <p class="section-subheading">Envie uma proposta, dúvida ou oportunidade através do formulário criptografado abaixo.</p>
                 </div>
 
-                <div class="contact-single-wrapper">
-                    <div class="contact-form-wrapper">
-                        <form class="contact-form" id="contact-form">
-                            <div class="form-group">
-                                <label for="form-name">Seu Nome</label>
-                                <div class="input-wrapper">
-                                    <i class="fa-solid fa-user input-icon"></i>
-                                    <input type="text" id="form-name" name="name" placeholder="Ex: Maria Silva" required>
+                <div class="contact-secure-container">
+                    <div class="contact-terminal-card">
+                        <div class="contact-card-header">
+                            <div class="header-left">
+                                <span class="lock-icon"><i class="fa-solid fa-shield-halved"></i></span>
+                                <span class="channel-title">SECURE DISPATCH PORTAL</span>
+                            </div>
+                            <span class="channel-status">ENCRYPTED // ACTIVE</span>
+                        </div>
+
+                        <form class="secure-form" id="contact-form">
+                            <div class="form-grid">
+                                <div class="form-field">
+                                    <label for="form-name" class="field-label">SEU NOME // REMETENTE</label>
+                                    <input type="text" id="form-name" name="name" class="field-input" placeholder="Ex: Alex Santos" required autocomplete="name">
+                                </div>
+
+                                <div class="form-field">
+                                    <label for="form-email" class="field-label">SEU E-MAIL // RESPOSTA</label>
+                                    <input type="email" id="form-email" name="email" class="field-input" placeholder="nome@empresa.com" required autocomplete="email">
                                 </div>
                             </div>
 
-                            <div class="form-group">
-                                <label for="form-email">Seu E-mail</label>
-                                <div class="input-wrapper">
-                                    <i class="fa-solid fa-at input-icon"></i>
-                                    <input type="email" id="form-email" name="email" placeholder="seuemail@exemplo.com" required>
-                                </div>
+                            <div class="form-field">
+                                <label for="form-subject" class="field-label">TEMA // ASSUNTO</label>
+                                <input type="text" id="form-subject" name="subject" class="field-input" placeholder="Novo Projeto / Proposta Profissional / Dúvida Técnica" required>
                             </div>
 
-                            <div class="form-group">
-                                <label for="form-subject">Assunto</label>
-                                <div class="input-wrapper">
-                                    <i class="fa-solid fa-comment-dots input-icon"></i>
-                                    <input type="text" id="form-subject" name="subject" placeholder="Oportunidade / Projeto / Mensagem" required>
-                                </div>
+                            <div class="form-field">
+                                <label for="form-message" class="field-label">MENSAGEM // DETALHES</label>
+                                <textarea id="form-message" name="message" class="field-textarea" rows="5" placeholder="Descreva os objetivos do projeto, requisitos ou oportunidade..." required></textarea>
                             </div>
 
-                            <div class="form-group">
-                                <label for="form-message">Mensagem</label>
-                                <div class="input-wrapper textarea-wrapper">
-                                    <textarea id="form-message" name="message" rows="5" placeholder="Escreva sua mensagem aqui..." required></textarea>
-                                </div>
+                            <div class="form-actions-row">
+                                <button type="submit" class="btn-submit" id="form-submit-btn">
+                                    <span class="btn-text">Transmitir Mensagem</span>
+                                    <i class="fa-solid fa-terminal"></i>
+                                </button>
+                                <span class="privacy-note"><i class="fa-solid fa-lock"></i> Seus dados são processados com total privacidade.</span>
                             </div>
 
-                            <button type="submit" class="btn btn-primary btn-block" id="form-submit-btn">
-                                <span>Enviar Mensagem</span>
-                                <i class="fa-solid fa-paper-plane"></i>
-                            </button>
-
-                            <div class="form-feedback" id="form-feedback"></div>
+                            <div class="form-status-alert" id="form-feedback" role="alert"></div>
                         </form>
                     </div>
                 </div>
@@ -504,38 +608,38 @@
         </section>
     </main>
 
-    <!-- Rodapé -->
-    <footer class="footer">
-        <div class="container footer-content">
-            <div class="footer-brand">
-                <a href="#home" class="nav-logo">
-                    <span class="logo-bracket">&lt;</span>
-                    <span class="logo-name">Rodrigo</span>
-                    <span class="logo-dot">.</span>
-                    <span class="logo-dev">dev</span>
-                    <span class="logo-bracket">/&gt;</span>
-                </a>
-                <p>Construindo soluções funcionais com paixão e código de qualidade.</p>
+    <!-- RODAPÉ TÉCNICO -->
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div class="footer-left">
+                <div class="footer-brand">
+                    <span class="brand-monogram">RW</span>
+                    <span class="brand-sub">Rodrigo Willen // Engenharia de Software</span>
+                </div>
+                <p class="footer-text">
+                    Desenvolvido com o Antigravity Kit. Arquitetura Pure Black e sem dependências supérfluas.
+                </p>
             </div>
 
-            <div class="footer-links">
-                <a href="#home">Início</a>
-                <a href="#about">Sobre</a>
-                <a href="#skills">Habilidades</a>
-                <a href="#projects">Projetos</a>
-                <a href="#contact">Contato</a>
+            <div class="footer-center">
+                <div class="footer-meta-item">
+                    <span class="meta-label">STATUS DO SERVIDOR:</span>
+                    <span class="meta-value status-green">OPERACIONAL (100%)</span>
+                </div>
+                <div class="footer-meta-item">
+                    <span class="meta-label">TEMA DO WORKSPACE:</span>
+                    <span class="meta-value">PURE BLACK OLED</span>
+                </div>
             </div>
 
-            <div class="footer-bottom">
-                <p>&copy; <span id="current-year"></span> Rodrigo Willen. Todos os direitos reservados.</p>
-                <a href="#home" class="back-to-top" title="Voltar ao topo">
-                    <i class="fa-solid fa-arrow-up"></i>
-                </a>
+            <div class="footer-right">
+                <div class="time-display" id="system-time">UTC --:--:--</div>
+                <div class="copyright">&copy; <span id="current-year"></span> Rodrigo Willen. Todos os direitos reservados.</div>
             </div>
         </div>
     </footer>
 
-    <!-- Scripts -->
+    <!-- Script Pure Black -->
     <script src="js/main.js"></script>
 </body>
 </html>
