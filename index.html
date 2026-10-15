@@ -1164,32 +1164,32 @@ ul {
                 </div>
 
                 <div class="projects-editorial-list">
-                    <!-- Projeto 01: Chatbot Básico Inteligente -->
+                    <!-- Projeto 01: API Drive -->
                     <article class="project-entry-card">
                         <div class="project-meta-col">
                             <span class="project-index">PROJ_01</span>
                             <span class="project-badge-live">EM PRODUÇÃO</span>
                             <div class="project-tags-mono">
-                                <span>JavaScript</span>
-                                <span>AI / NLP</span>
-                                <span>Vercel</span>
-                                <span>Web</span>
+                                <span>Python</span>
+                                <span>REST API</span>
+                                <span>Cloud Drive</span>
+                                <span>FastAPI / Service</span>
                             </div>
                         </div>
 
                         <div class="project-details-col">
-                            <h3 class="project-entry-title">Chatbot Inteligente Interativo</h3>
+                            <h3 class="project-entry-title">API Drive — Storage & File Service</h3>
                             <p class="project-entry-desc">
-                                Aplicação conversacional desenvolvida com JavaScript puro e deploy contínuo na Vercel. Projetada com arquitetura modular para respostas imediatas, alta capacidade de resposta em dispositivos móveis e integração fluida.
+                                Serviço de armazenamento e gerenciamento de arquivos em nuvem desenvolvido em Python. Desenvolvido para operações de upload, sincronização segura de mídias e integração de dados com alta eficiência e disponibilidade.
                             </p>
                             <div class="project-links-row">
-                                <a href="https://chatbot-basico-theta.vercel.app" target="_blank" rel="noopener noreferrer" class="btn-project-link primary">
-                                    <span>Visualizar Deploy</span>
+                                <a href="https://app.rodrigowillen.com.br" target="_blank" rel="noopener noreferrer" class="btn-project-link primary">
+                                    <span>Acessar Aplicação</span>
                                     <i class="fa-solid fa-arrow-up-right-from-square"></i>
                                 </a>
-                                <a href="https://github.com/rodrigowillen/chatbot-basico" target="_blank" rel="noopener noreferrer" class="btn-project-link secondary">
+                                <a href="https://github.com/rodrigowillen/api-drive" target="_blank" rel="noopener noreferrer" class="btn-project-link secondary">
                                     <i class="fa-brands fa-github"></i>
-                                    <span>Código Fonte</span>
+                                    <span>Repositório</span>
                                 </a>
                             </div>
                         </div>
@@ -1197,15 +1197,16 @@ ul {
                         <div class="project-preview-col">
                             <div class="pure-code-block">
                                 <div class="code-block-header">
-                                    <span class="file-name">chatbot-engine.js</span>
-                                    <span class="file-status">READY</span>
+                                    <span class="file-name">drive_service.py</span>
+                                    <span class="file-status">ACTIVE</span>
                                 </div>
-                                <pre><code><span class="c-keyword">const</span> bot = <span class="c-func">createInstance</span>({
-  <span class="c-prop">mode</span>: <span class="c-str">"conversational"</span>,
-  <span class="c-prop">platform</span>: <span class="c-str">"vercel-edge"</span>,
-  <span class="c-prop">latency</span>: <span class="c-num">&lt; 50ms</span>
-});
-<span class="c-keyword">await</span> bot.<span class="c-func">listenAndRespond</span>();</code></pre>
+                                <pre><code><span class="c-keyword">from</span> drive <span class="c-keyword">import</span> <span class="c-func">StorageService</span>
+
+client = <span class="c-func">StorageService</span>(
+    endpoint=<span class="c-str">"app.rodrigowillen.com.br"</span>,
+    sync_mode=<span class="c-str">"encrypted"</span>
+)
+<span class="c-keyword">await</span> client.<span class="c-func">sync_storage</span>()</code></pre>
                             </div>
                         </div>
                     </article>
