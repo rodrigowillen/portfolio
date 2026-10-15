@@ -1387,7 +1387,28 @@ ul {
         </div>
     </footer>
 
-    <!-- Script Pure Black -->
-    <script src="js/main.js"></script>
+    <!-- Script de Inicialização Imediata do Relógio UTC & Ano -->
+    <script>
+        (function() {
+            function updateClock() {
+                var el = document.getElementById('system-time');
+                if (el) {
+                    var now = new Date();
+                    var h = String(now.getUTCHours()).padStart(2, '0');
+                    var m = String(now.getUTCMinutes()).padStart(2, '0');
+                    var s = String(now.getUTCSeconds()).padStart(2, '0');
+                    el.textContent = 'UTC ' + h + ':' + m + ':' + s;
+                }
+            }
+            updateClock();
+            setInterval(updateClock, 1000);
+
+            var yr = document.getElementById('current-year');
+            if (yr) yr.textContent = new Date().getFullYear();
+        })();
+    </script>
+
+    <!-- Script Pure Black Principal com Cache Busting -->
+    <script src="js/main.js?v=20261015-v7"></script>
 </body>
 </html>

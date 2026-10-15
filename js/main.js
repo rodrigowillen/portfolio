@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /* ==========================================================================
-   RELÓGIO DO SISTEMA EM TEMPO REAL (UTC / LOCAL)
+   RELÓGIO DO SISTEMA EM TEMPO REAL (UTC HH:MM:SS)
    ========================================================================== */
 function initClock() {
     const timeElement = document.getElementById('system-time');
@@ -20,10 +20,10 @@ function initClock() {
 
     function updateTime() {
         const now = new Date();
-        const hours = String(now.getHours()).padStart(2, '0');
-        const minutes = String(now.getMinutes()).padStart(2, '0');
-        const seconds = String(now.getSeconds()).padStart(2, '0');
-        timeElement.textContent = `SYS.CLOCK ${hours}:${minutes}:${seconds} (LOCAL)`;
+        const utcHours = String(now.getUTCHours()).padStart(2, '0');
+        const utcMinutes = String(now.getUTCMinutes()).padStart(2, '0');
+        const utcSeconds = String(now.getUTCSeconds()).padStart(2, '0');
+        timeElement.textContent = `UTC ${utcHours}:${utcMinutes}:${utcSeconds}`;
     }
 
     updateTime();
