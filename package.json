@@ -1,0 +1,12 @@
+{
+  "name": "portfolio-rodrigo-willen",
+  "version": "1.0.0",
+  "description": "Portfólio profissional estático de Rodrigo Willen",
+  "scripts": {
+    "ag-kit:status": "ag-kit status",
+    "ag-kit:update": "ag-kit update"
+  },
+  "devDependencies": {
+    "@vudovn/ag-kit": "^2026.8.31"
+  }
+}
