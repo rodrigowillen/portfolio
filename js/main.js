@@ -41,7 +41,7 @@ function initInteractiveTerminal() {
     const commandDatabase = {
         whoami: "Rodrigo Willen — Desenvolvedor de Software focado em código limpo, arquitetura e alto desempenho.",
         stack: "JavaScript (ES6+), TypeScript, React, Node.js, Python, REST APIs, Git & Cloud Deploy.",
-        projects: "Projetos: [1] Chatbot Inteligente (Vercel), [2] Pure Black Portfolio (AG Kit), [3] Telemetry & Systems Spec.",
+        projects: "Projetos: [1] Chatbot Inteligente (Vercel), [2] Pure Black Portfolio, [3] Telemetry & Systems Spec.",
         status: "● SISTEMA OPERACIONAL: 100% pronto e aberto para novos projetos e colaborações.",
         clear: "__CLEAR__"
     };
